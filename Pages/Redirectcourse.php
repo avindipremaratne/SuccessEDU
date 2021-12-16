@@ -1,0 +1,24 @@
+<?php 
+session_start();
+?>
+<?php 
+	if(isset($_POST["btncbutton"]))
+	{
+		foreach($_POST['btncbutton'] as $key => $value)
+		{
+			if($key==1)
+			{
+				$_SESSION["id"]=$_POST["txtid"];
+				$_SESSION["name"]=$_POST["txtname"];
+				$_SESSION["modules"]=$_POST["txtmodules"];
+				$_SESSION["index"]=$_POST["txtindex"];
+				header("Location:Updatecourse.php");
+				}
+				elseif($key==2)
+				{
+						$_SESSION["id"]=$_POST["txtid"];
+						header("Location:Deletecourse.php");
+					}				
+			}
+	}
+?>
